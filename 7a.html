@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPI Calculator</title>
+    <script>
+      // function to calculate the SPI  mulitplying the grade with the credits and then dividing it by the total credits
+      function Calculate(){
+        //getting the values from the input fields
+        var sub1 = document.getElementById("sub1").value;
+        var sub2 = document.getElementById("sub2").value;
+        var sub3 = document.getElementById("sub3").value;
+        var sub4 = document.getElementById("sub4").value;
+        var sub5 = document.getElementById("sub5").value;
+        var sub1c = document.getElementById("sub1c").value;
+        var sub2c = document.getElementById("sub2c").value;
+        var sub3c = document.getElementById("sub3c").value;
+        var sub4c = document.getElementById("sub4c").value;
+        var sub5c = document.getElementById("sub5c").value;
+        //calculating the total credits
+        var totalc = parseInt(sub1c) + parseInt(sub2c) + parseInt(sub3c) + parseInt(sub4c) + parseInt(sub5c);
+        //calculating the total grade points
+        var totalg = (sub1*sub1c) + (sub2*sub2c) + (sub3*sub3c) + (sub4*sub4c) + (sub5*sub5c);
+        //calculating the SPI
+        var spi = totalg/totalc;
+        console.log(spi);
+        //displaying the answer
+        document.getElementById("Answer").innerHTML = "Your SPI is " + spi;
+      };
+
+
+    </script>
+     <style media="screen">
+        body{
+          background-repeat: no-repeat;
+         background-size: cover;
+         padding: 0% 5%;
+         font-family: Dubai;
+         font-size: 20px;
+        }
+        </style>
+</head>
+<body  background="back1.jpg">
+    <div>
+    <h1 style="text-align: center; "><b>SPI Calculator</b></h1>
+    </div >
+    <div style="margin: 2% 5%; text-align: center;">
+    <table style="text-align: center; ">
+      <tr>
+        <th>Subject</th>
+        <th>Grade</th>
+        <th>Credits</th>
+      </tr>
+      <tr>
+        <td style="margin: 0px 65px;"">Subject 1 </td>
+        <td><input type="text" id="sub1"></td>
+        <td><input type="text" id="sub1c"></td>
+      </tr>
+      <tr>
+        <td style="margin: 0px 65px;">Subject 2</td>
+        <td><input type="text" id="sub2"></td>
+        <td><input type="text" id="sub2c"></td>
+      </tr>
+      <tr>
+        <td style="margin: 0px 65px;" >Subject 3</td>
+        <td><input type="text" id="sub3"></td>
+        <td><input type="text" id="sub3c"></td>
+      </tr>
+      <tr>
+        <td style="margin: 0px 65px;">Subject 4</td>
+        <td><input type="text" id="sub4"></td>
+        <td><input type="text" id="sub4c"></td>
+      </tr>
+      <tr>
+        <td style="margin: 0px 65px;">Subject 5</td>
+        <td><input type="text" id="sub5"></td>
+        <td><input type="text" id="sub5c"></td>
+      </tr>
+    </table>
+    <br>
+    <br>
+    <br>
+    <button type="button" id="Ans" onclick=" Calculate()" ><b>Calculate CPI</b></button>
+    <br>
+    <br>
+    <div>
+      <b><p id="Answer"></p></b>
+    </div>
+    </div>
+</body>
+</html>
+
+
+ 
